@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>First</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="script" href="Script1.js">
+    <title></title>
+</head>
+<body>
+    <div class="yes">
+        <div class="titleDiv">
+            <h1 class="titleText">Password Generator</h1>
+        </div>
+        <div class="hero">
+            <input id="number" type="text" class="input-field" onchange="varable()" placeholder="Value" required>
+            <div class="theButton">
+                <button style="--content: 'Generate!';" type="submit" value="Submit" onclick="login()">
+                    <div class="left"></div>
+                    Generate!
+                    <div class="right"></div>
+                </button>
+            </div>
+
+            <text id="passText" class="passText"></text>
+        </div>
+    </div>
+
+    <script>
+        let inputVal = document.getElementsByClassName("input-field")[0].value;
+
+        function varable() {
+            inputVal = document.getElementsByClassName("input-field")[0].value;
+        }
+
+        function login() {
+            var result = '';
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            var charactersLength = characters.length;
+            for (var i = 0; i < inputVal; i++) {
+                result += characters.charAt(Math.floor(Math.random() * charactersLength));
+                document.getElementById("passText").textContent = result;
+            }
+        }
+    </script>
+</body >
+
+</html >
